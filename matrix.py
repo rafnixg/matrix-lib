@@ -49,7 +49,7 @@ class Matrix:
         """
         rows, cols = self.shape()
         if self.shape() != other.shape():
-            raise ValueError("Las matrices deben tener las mismas dimensiones")
+            raise ArithmeticError("Las matrices deben tener las mismas dimensiones")
         result = []
         for i in range(rows):
             row = []
@@ -85,7 +85,7 @@ class Matrix:
         :return: Matriz resultante
         """
         if self.shape() != other.shape():
-            raise ValueError("Las matrices deben tener las mismas dimensiones")
+            raise ArithmeticError("Las matrices deben tener las mismas dimensiones")
         rows, cols = self.shape()
         result = []
         for i in range(rows):
@@ -104,7 +104,7 @@ class Matrix:
         rows, cols = self.shape()
         rows2, cols2 = other.shape()
         if cols != rows2:
-            raise ValueError("Las matrices no son multiplicables")
+            raise ArithmeticError("Las matrices no son multiplicables")
         result = []
         for i in range(rows):
             row = []
@@ -119,7 +119,7 @@ class Matrix:
 
 if __name__ == "__main__":
     matrix1 = Matrix([[2, -2, 0], [-3, 1, 2], [1, -3, -1]])
-    matrix2 = Matrix([[2, -2, 0], [-3, 1, 2], [1, -3, -1]])
+    matrix2 = Matrix([[2, -2, 0], [-3, 1, 2]])
     print("matrix1", matrix1)
     print("matrix2", matrix1)
     print("matrix_shape1", matrix1.shape())
