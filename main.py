@@ -25,6 +25,22 @@ class Matrix:
         """
         return len(self.matrix), len(self.matrix[0])
 
+
+    def scalar(self, scalar: int):
+        """
+        Multiplicacion por escalar
+        :param scalar: Escalar
+        :return: Matriz resultante
+        """
+        rows, cols = self.shape()
+        result = []
+        for i in range(rows):
+            row = []
+            for j in range(cols):
+                row.append(self.matrix[i][j] * scalar)
+            result.append(row)
+        return Matrix(result)
+
     def dot(self, other: "Matrix"):
         """
         Multiplicacion punto
